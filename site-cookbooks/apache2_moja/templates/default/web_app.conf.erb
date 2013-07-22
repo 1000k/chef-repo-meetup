@@ -24,6 +24,11 @@
     Allow from 127.0.0.1
   </Location>
 
+#  <Location /nifty>
+#    RewriteEngine on
+#    RewriteRule ^/(.*)$ http://www.nifty.com/ [R,L]
+#  </Location>
+
   LogLevel info
   ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
   CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
